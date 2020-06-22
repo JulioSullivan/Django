@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog', 
+    'core', 
+    'contact', 
+    'pages.apps.PagesConfig', 
+    'services.apps.ServicesConfig', 
+    'social.apps.SocialConfig'
 ]
 
 MIDDLEWARE = [
@@ -62,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.processors.ctx_dict', 
             ],
         },
     },
@@ -103,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -118,3 +125,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Media files
+MEDIA_URL ='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media") # Se le indica a dónde tien que ir abuscarla
+
+# Email config
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'efc906810d6bcc'
+EMAIL_HOST_PASSWORD = '7f5c6013b5d3d8'
+EMAIL_PORT = '2525'
